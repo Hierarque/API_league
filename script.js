@@ -1,6 +1,11 @@
-const API_KEY = "RGAPI-7441d917-3663-47db-b258-6b88b22766b1";
+const API_KEY = 'RGAPI-7441d917-3663-47db-b258-6b88b22766b1';
 
-let request = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + "HugoHinn" + "?api_key=" + API_KEY;
+var summoner_name = 'HugoHinn';
 
-fetch(request).
-    then(response => console.log(response));
+let request = 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + summoner_name + '?api_key=' + API_KEY;
+
+console.log(request);
+// fetch des informations de l'utilisateur au dessus
+fetch(request)
+    .then((res) => res.json())
+    .then(response => console.log(response));
